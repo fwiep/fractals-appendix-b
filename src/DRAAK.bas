@@ -1,0 +1,16 @@
+10 REM ***DRAAKKROMME MET GEGEVEN HOEK***
+20 REM ***NAAM:DRAAK (C) 1987 HANS LAUWERIER***
+30 SCREEN 3: CLS : PI = 3.141593
+40 WINDOW (-2.5, -2)-(1.5, 1)
+50 P = 6: REM ***KEUZE ORDE***
+60 H = 2 ^ (-P / 2): A = 1.7453: REM ***KEUZE HOEK***
+70 B = PI - A: X = H: Y = 0: LINE (0, 0)-(H, 0): S = 0
+80 FOR N = 1 TO 2 ^ P - 1: M = N
+110 IF M MOD 2 = 0 THEN M = M / 2: GOTO 110
+120 IF M MOD 4 = 1 THEN D = 1 ELSE D = -1
+130 S = (S + D)
+140 X = X + H * COS(S * B)
+150 Y = Y + H * SIN(S * B)
+160 LINE -(X, Y)
+170 NEXT N: END
+
